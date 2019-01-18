@@ -1,42 +1,23 @@
-#
-# Be sure to run `pod lib lint SwiftyMediator.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
-  s.name             = 'SwiftyMediator'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of SwiftyMediator.'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.name         = 'SwiftyMediator'
+  s.version      = '0.0.2'
+  s.summary      = 'Pure Swifty Mediator'
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.description  = <<-DESC
+                    this is SwiftyMediator, easiest way to route viewControllers in swift
+                   DESC
 
-  s.homepage         = 'https://github.com/shayuan/SwiftyMediator'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'shayuan' => 'shayuan@silvrr.com' }
-  s.source           = { :git => 'https://github.com/shayuan/SwiftyMediator.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.homepage     = 'https://github.com/AceSha/SwiftyMediator'
 
-  s.ios.deployment_target = '8.0'
+  s.license      = { :type => 'MIT', :file => 'LICENSE' }
+
+  s.author       = 'shayuan'
+
+  s.platform     = :ios, '8.0'
+
+  s.source       = { :git => 'https://github.com/AceSha/SwiftyMediator.git', :tag => s.version.to_s }
 
   s.source_files = 'SwiftyMediator/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'SwiftyMediator' => ['SwiftyMediator/Assets/*.png']
-  # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

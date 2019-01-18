@@ -7,18 +7,45 @@
 //
 
 import UIKit
+import SwiftyMediator
+
+public enum ModuleAMediatorType {
+    case push(title: String)
+    case present(color: UIColor)
+}
+
+extension ModuleAMediatorType: MediatorTargetType {
+    public var viewController: UIViewController? {
+        switch self {
+        case .push(let title):
+            let vc = UIViewController()
+            vc.view.backgroundColor = .green 
+            vc.title = title
+            return vc
+            
+        case .present(let color):
+            let vc = UIViewController()
+            vc.view.backgroundColor = color
+            vc.title = "Presented"
+            return vc
+        }
+    }
+}
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func push(_ sender: Any) {
+        // `from` is optional
+        SwiftyMediator.push(ModuleAMediatorType.push(title: "hello world"), from: self.navigationController)
     }
-
+    
+    @IBAction func present(_ sender: Any) {
+        // `from` is optional
+        SwiftyMediator.present(ModuleAMediatorType.present(color: .blue), from: self)
+    }
 }
 
