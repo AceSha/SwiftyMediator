@@ -24,7 +24,7 @@ extension ModuleAMediatorType: MediatorTargetType {
             return vc
             
         case .present(let color):
-            let vc = UIViewController()
+            let vc = PresentedViewController()
             vc.view.backgroundColor = color
             vc.title = "Presented"
             return vc
@@ -47,5 +47,6 @@ class ViewController: UIViewController {
         // `from` is optional
         SwiftyMediator.present(ModuleAMediatorType.present(color: .blue), from: self)
     }
+    
 }
 

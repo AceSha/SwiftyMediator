@@ -14,7 +14,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		A0E2A867863361F4130183E5 /* Pods_SwiftyMediator_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8418306A63D138202834E1AF /* Pods_SwiftyMediator_Example.framework */; };
-		D6325AC57D791325346F4334 /* Pods_SwiftyMediator_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A5B13A51F084AF1CCC3351 /* Pods_SwiftyMediator_Tests.framework */; };
+		FC1D1C7D21F1E0B40074026C /* PresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D1C7C21F1E0B40074026C /* PresentedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +28,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4D742A7C01F95972C0651521 /* Pods-SwiftyMediator_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyMediator_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyMediator_Tests/Pods-SwiftyMediator_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SwiftyMediator_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyMediator_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,9 +42,9 @@
 		82A5B13A51F084AF1CCC3351 /* Pods_SwiftyMediator_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyMediator_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8418306A63D138202834E1AF /* Pods_SwiftyMediator_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyMediator_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1DFE46A1B3C877B02419D97 /* Pods-SwiftyMediator_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyMediator_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyMediator_Example/Pods-SwiftyMediator_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		B44138B9F6DCEFBDC7D9431D /* Pods-SwiftyMediator_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyMediator_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyMediator_Tests/Pods-SwiftyMediator_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		C93EDEBAB9036F65E7001B9B /* SwiftyMediator.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SwiftyMediator.podspec; path = ../SwiftyMediator.podspec; sourceTree = "<group>"; };
 		F2A7C254AE09B61D371B3F52 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		FC1D1C7C21F1E0B40074026C /* PresentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentedViewController.swift; sourceTree = "<group>"; };
 		FD470FA4AC7D77EA44D91F19 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,7 +61,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6325AC57D791325346F4334 /* Pods_SwiftyMediator_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +102,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				FC1D1C7C21F1E0B40074026C /* PresentedViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -153,8 +152,6 @@
 			children = (
 				A1DFE46A1B3C877B02419D97 /* Pods-SwiftyMediator_Example.debug.xcconfig */,
 				7A7C52D639CBF0CAA2222067 /* Pods-SwiftyMediator_Example.release.xcconfig */,
-				4D742A7C01F95972C0651521 /* Pods-SwiftyMediator_Tests.debug.xcconfig */,
-				B44138B9F6DCEFBDC7D9431D /* Pods-SwiftyMediator_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -171,6 +168,7 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				B972C2806EA56364472ADAB4 /* [CP] Embed Pods Frameworks */,
+				FC1D1C7B21F1DA990074026C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -185,7 +183,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "SwiftyMediator_Tests" */;
 			buildPhases = (
-				8878BA9D6D9BC24D0B556E1A /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
@@ -283,28 +280,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8878BA9D6D9BC24D0B556E1A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SwiftyMediator_Tests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B972C2806EA56364472ADAB4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -327,6 +302,23 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyMediator_Example/Pods-SwiftyMediator_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FC1D1C7B21F1DA990074026C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/SwiftyMediatorSearch/MediatorSearch\" generate \n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -336,6 +328,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				FC1D1C7D21F1E0B40074026C /* PresentedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,7 +503,6 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D742A7C01F95972C0651521 /* Pods-SwiftyMediator_Tests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -531,7 +523,6 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B44138B9F6DCEFBDC7D9431D /* Pods-SwiftyMediator_Tests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
