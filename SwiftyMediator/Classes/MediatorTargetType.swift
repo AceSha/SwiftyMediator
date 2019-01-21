@@ -6,6 +6,6 @@ public protocol MediatorTargetType {
     var viewController: UIViewController? { get }
 }
 
-extension MediatorTargetType {
+public extension MediatorTargetType {
     var viewController: UIViewController? { return nil }
 }
