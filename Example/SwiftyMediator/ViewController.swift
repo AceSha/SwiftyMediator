@@ -9,12 +9,12 @@
 import UIKit
 import SwiftyMediator
 
-public enum ModuleAMediatorType {
+public enum ModuleAMediatorType: MediatorTargetType {
     case push(title: String)
     case present(color: UIColor)
 }
 
-extension ModuleAMediatorType: MediatorTargetType {
+extension ModuleAMediatorType {
     public var viewController: UIViewController? {
         switch self {
         case .push(let title):
@@ -33,19 +33,22 @@ extension ModuleAMediatorType: MediatorTargetType {
 }
 
 class ViewController: UIViewController {
-
+    
+    private var mediator: SwiftyMediator!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.mediator = SwiftyMediator()
     }
 
     @IBAction func push(_ sender: Any) {
         // `from` is optional
-        SwiftyMediator.push(ModuleAMediatorType.push(title: "hello world"), from: self.navigationController)
+        mediator.push(ModuleAMediatorType.push(title: "hello world"), from: self.navigationController)
     }
     
     @IBAction func present(_ sender: Any) {
         // `from` is optional
-        SwiftyMediator.present(ModuleAMediatorType.present(color: .blue), from: self)
+        mediator.present(ModuleAMediatorType.present(color: .blue), from: self)
     }
     
 }

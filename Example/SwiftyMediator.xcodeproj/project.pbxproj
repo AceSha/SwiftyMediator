@@ -317,7 +317,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/SwiftyMediatorSearch/MediatorSearch\" generate \n";
+			shellScript = "\"$PODS_ROOT/SwiftyMediatorSearch/MediatorSearch\" generate \n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

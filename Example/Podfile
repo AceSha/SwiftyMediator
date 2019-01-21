@@ -4,5 +4,5 @@ use_frameworks!
 target 'SwiftyMediator_Example' do
 
   pod 'SwiftyMediator', :path => '../'
-
+  
 end
