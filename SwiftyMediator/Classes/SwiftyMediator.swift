@@ -2,13 +2,17 @@
 import UIKit
 #endif
 
+public protocol SwiftyMediatorType {
+    func viewController(of target: MediatorTargetType) -> UIViewController?
+}
+
 open class SwiftyMediator {
     
     public init() { }
     
     @discardableResult
     public func push(_ target: MediatorTargetType, from: UINavigationController? = nil, animated: Bool = true) -> UIViewController? {
-        guard let viewController = target.viewController else { return nil }
+        guard let viewController = self.viewController(of: target) else { return nil }
         guard let navigationController = from ?? UIViewController.topMost?.navigationController else { return nil }
         navigationController.pushViewController(viewController, animated: animated)
         return viewController
@@ -16,7 +20,7 @@ open class SwiftyMediator {
     
     @discardableResult
     public func present(_ target: MediatorTargetType, from: UIViewController? = nil, wrap: UINavigationController.Type? = nil, animated: Bool = true, completion: (() -> Void)? = nil) -> UIViewController? {
-        guard let viewController = target.viewController else { return nil }
+        guard let viewController = self.viewController(of: target) else { return nil }
         guard let fromViewController = from ?? UIViewController.topMost else { return nil }
         
         let viewControllerToPresent: UIViewController
@@ -27,6 +31,18 @@ open class SwiftyMediator {
         }
         
         fromViewController.present(viewControllerToPresent, animated: animated, completion: completion)
+        return viewController
+    }
+}
+
+
+extension SwiftyMediator: SwiftyMediatorType {
+    public func viewController(of target: MediatorTargetType) -> UIViewController? {
+        guard let t = target as? MediatorSourceType else {
+            assertionFailure("\(target) not conform to MediatorSourceType")
+            return nil
+        }
+        guard let viewController = t.viewController else { return nil }
         return viewController
     }
 }

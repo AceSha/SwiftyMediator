@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = 'SwiftyMediator'
-  s.version      = '0.0.4'
+  s.version      = '0.1.0'
   s.summary      = 'Pure Swifty Mediator'
 
   s.description  = <<-DESC

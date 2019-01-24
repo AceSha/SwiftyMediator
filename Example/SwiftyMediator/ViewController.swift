@@ -14,7 +14,7 @@ public enum ModuleAMediatorType: MediatorTargetType {
     case present(color: UIColor)
 }
 
-extension ModuleAMediatorType {
+extension ModuleAMediatorType: MediatorSourceType {
     public var viewController: UIViewController? {
         switch self {
         case .push(let title):
