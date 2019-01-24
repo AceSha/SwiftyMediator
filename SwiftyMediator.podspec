@@ -20,6 +20,4 @@ Pod::Spec.new do |s|
 
   s.source_files = 'SwiftyMediator/Classes/**/*'
 
-  s.dependency 'SwiftyMediatorSearch'
-
 end
