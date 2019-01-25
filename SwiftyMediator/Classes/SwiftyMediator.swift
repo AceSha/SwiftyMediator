@@ -39,7 +39,7 @@ open class SwiftyMediator {
 extension SwiftyMediator: SwiftyMediatorType {
     public func viewController(of target: MediatorTargetType) -> UIViewController? {
         guard let t = target as? MediatorSourceType else {
-            assertionFailure("\(target) not conform to MediatorSourceType")
+            print("MEDIATOR WARNINIG: \(target) not conform to MediatorSourceType")
             return nil
         }
         guard let viewController = t.viewController else { return nil }
