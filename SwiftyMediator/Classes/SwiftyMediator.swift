@@ -67,6 +67,7 @@ extension SwiftyMediator: SwiftyMediatorType {
 
 extension SwiftyMediator: SwiftyMediatorRoutable {
     public func targetType(of url: URLConvertible) -> MediatorTargetType? {
+        let url = self.replacePatterns[url.pattern] ?? url
         guard let routable = routeTargets.compactMap({ $0.init(url: url) }).first else { return nil  }
         guard let target = routable as? MediatorTargetType else { return nil }
         return target
