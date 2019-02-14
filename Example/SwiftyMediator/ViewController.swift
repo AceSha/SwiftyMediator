@@ -16,7 +16,6 @@ public enum ModuleAMediatorType: MediatorTargetType {
 
 extension ModuleAMediatorType: MediatorRoutable {
     public init?(url: URLConvertible) {
-
         switch url.pattern {
         case "sy://push":
             self = .push(title: url.queryParameters["title"] ?? "default")
