@@ -7,7 +7,7 @@
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+[纯Swift极简组件化路由方案](https://juejin.im/post/5c43070e6fb9a049a5713435)
 
 ## Requirements
 
