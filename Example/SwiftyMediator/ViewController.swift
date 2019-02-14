@@ -14,6 +14,20 @@ public enum ModuleAMediatorType: MediatorTargetType {
     case present(color: UIColor)
 }
 
+extension ModuleAMediatorType: MediatorRoutable {
+    public init?(url: URLConvertible) {
+
+        switch url.pattern {
+        case "sy://push":
+            self = .push(title: url.queryParameters["title"] ?? "default")
+        case "sy://present":
+            self = .present(color: UIColor.red)
+        default:
+            return nil 
+        }
+    }
+}
+
 extension ModuleAMediatorType: MediatorSourceType {
     public var viewController: UIViewController? {
         switch self {
@@ -34,21 +48,21 @@ extension ModuleAMediatorType: MediatorSourceType {
 
 class ViewController: UIViewController {
     
-    private var mediator: SwiftyMediator!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.mediator = SwiftyMediator()
+        Mediator.register(ModuleAMediatorType.self)
     }
 
     @IBAction func push(_ sender: Any) {
         // `from` is optional
-        mediator.push(ModuleAMediatorType.push(title: "hello world"), from: self.navigationController)
+//        Mediator.push(ModuleAMediatorType.push(title: "hello world"), from: self.navigationController)
+        
+        Mediator.push("sy://push?title=hahaha", from: self.navigationController)
     }
     
     @IBAction func present(_ sender: Any) {
         // `from` is optional
-        mediator.present(ModuleAMediatorType.present(color: .blue), from: self)
+        Mediator.present(ModuleAMediatorType.present(color: .blue), from: self)
     }
     
 }
