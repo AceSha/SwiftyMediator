@@ -11,6 +11,9 @@
 
 ## Requirements
 
+Swifty Version: 4.2 + 
+Build Xcode Version: 10.1
+
 ## Installation
 
 SwiftyMediator is available through [CocoaPods](https://cocoapods.org). To install
@@ -22,7 +25,7 @@ pod 'SwiftyMediator'
 
 ## Author
 
-shayuan, shayuan@silvrr.com
+shayuan, shayuan6666@163.com
 
 ## License
 
