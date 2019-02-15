@@ -19,10 +19,21 @@ Build Xcode Version: 10.1
 SwiftyMediator is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
+normal usage, just
+
 ```ruby
 pod 'SwiftyMediator'
+
 ```
 
+make it routable, just 
+
+```ruby
+pod 'SwiftyMediator/Routable'
+
+```
+
+more info, see [Demo](https://github.com/SwiftyMediatorDemo/SwiftyMediatorDemo)
 ## Author
 
 shayuan, shayuan6666@163.com
