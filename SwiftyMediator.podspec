@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = 'SwiftyMediator'
-  s.version      = '0.1.1'
+  s.version      = '0.2.0'
   s.summary      = 'Pure Swifty Mediator'
 
   s.description  = <<-DESC
@@ -18,6 +18,15 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => 'https://github.com/AceSha/SwiftyMediator.git', :tag => s.version.to_s }
 
-  s.source_files = 'SwiftyMediator/Classes/**/*'
+  s.default_subspec = 'Core'
+
+  s.subspec 'Core' do |c|
+    c.source_files = 'SwiftyMediator/Classes/Core/**/*'
+  end
+
+  s.subspec 'Routable' do |r|
+    r.source_files = 'SwiftyMediator/Classes/Routable/**/*'
+    r.dependency 'SwiftyMediator/Core'
+  end
 
 end
