@@ -5,16 +5,6 @@ import UIKit
 public let Mediator = SwiftyMediator()
 
 open class SwiftyMediator {
-    private var routeTargets: [MediatorRoutable.Type] = []
-    private var replacePatterns: [String: URLConvertible] = [:]
-    
-    public func register(_ targetType: MediatorRoutable.Type) {
-        self.routeTargets.append(targetType)
-    }
-    
-    public func replace(url: URLConvertible, with replacer: URLConvertible) {
-        self.replacePatterns[url.pattern] = replacer
-    }
 
     @discardableResult
     public func push(_ target: MediatorTargetType, from: UINavigationController? = nil, animated: Bool = true) -> UIViewController? {
@@ -40,18 +30,6 @@ open class SwiftyMediator {
         return viewController
     }
     
-    @discardableResult
-    public func push(_ url: URLConvertible, from: UINavigationController? = nil, animated: Bool = true) -> UIViewController? {
-        guard let target = self.targetType(of: url) else { return nil }
-        return self.push(target, from: from, animated: animated)
-    }
-    
-    @discardableResult
-    public func present(_ url: URLConvertible, from: UIViewController? = nil, wrap: UINavigationController.Type? = nil, animated: Bool = true, completion: (() -> Void)? = nil) -> UIViewController? {
-        guard let target = self.targetType(of: url) else { return nil }
-        return self.present(target, from: from, wrap: wrap, animated: animated, completion: completion)
-    }
-    
 }
 
 extension SwiftyMediator: SwiftyMediatorType {
@@ -62,20 +40,5 @@ extension SwiftyMediator: SwiftyMediatorType {
         }
         guard let viewController = t.viewController else { return nil }
         return viewController
-    }
-}
-
-extension SwiftyMediator: SwiftyMediatorRoutable {
-    public func targetType(of url: URLConvertible) -> MediatorTargetType? {
-        let url = self.replacePatterns[url.pattern] ?? url
-        guard let routable = routeTargets.compactMap({ $0.init(url: url) }).first else { return nil  }
-        guard let target = routable as? MediatorTargetType else { return nil }
-        return target
-    }
-    
-    public func viewController(of url: URLConvertible) -> UIViewController? {
-        let url = self.replacePatterns[url.pattern] ?? url
-        guard let target = self.targetType(of: url) else { return nil }
-        return self.viewController(of: target)
     }
 }

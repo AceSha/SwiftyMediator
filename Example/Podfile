@@ -3,6 +3,6 @@ use_frameworks!
 
 target 'SwiftyMediator_Example' do
 
-  pod 'SwiftyMediator', :path => '../'
+    pod 'SwiftyMediator', :path => '../', :subspecs => ['Routable']
   
 end
